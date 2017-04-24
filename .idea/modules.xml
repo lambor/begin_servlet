@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/begin_servlet.iml" filepath="$PROJECT_DIR$/begin_servlet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/begin_springmvc/begin_springmvc.iml" filepath="$PROJECT_DIR$/begin_springmvc/begin_springmvc.iml" />
+    </modules>
+  </component>
+</project>
