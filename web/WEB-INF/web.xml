@@ -5,6 +5,17 @@
 		  http://java.sun.com/xml/ns/javaee/web-app_3_1.xsd"
            version="3.1">
 
+    <jsp-config>
+        <jsp-property-group>
+            <url-pattern>/noScriptlet.jsp</url-pattern>
+            <scripting-invalid>true</scripting-invalid>
+        </jsp-property-group>
+        <jsp-property-group>
+            <url-pattern>/app04a/noEL.jsp</url-pattern>
+            <el-ignored>true</el-ignored>
+        </jsp-property-group>
+    </jsp-config>
+
     <servlet>
         <servlet-name>SimpleServlet</servlet-name>
         <servlet-class>app01c.SimpleServlet</servlet-class>
@@ -26,5 +37,6 @@
         <servlet-name>WelcomeServlet</servlet-name>
         <url-pattern>/welcome</url-pattern>
     </servlet-mapping>
+
 
 </web-app>
