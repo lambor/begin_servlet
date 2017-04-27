@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+        version="2.1">
+
+    <description>
+        Simple tag examples
+    </description>
+    <tlib-version>1.0</tlib-version>
+    <short-name>myfirsttag</short-name>
+    <uri>http://mycompany.com</uri>
+
+    <!-- Invoke 'Generate' action to add tags or functions -->
+
+    <tag>
+        <name>firstTag</name>
+        <tag-class>app06a.customtag.MyFirstTag</tag-class>
+        <body-content>empty</body-content>
+    </tag>
+
+    <tag>
+        <name>dataFormatter</name>
+        <tag-class>app06a.customtag.DataFormatterTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>header</name>
+            <required>true</required>
+        </attribute>
+        <attribute>
+            <name>items</name>
+            <required>true</required>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>select</name>
+        <tag-class>app06a.customtag.SelectElementTag</tag-class>
+        <body-content>scriptless</body-content>
+    </tag>
+
+    <function>
+        <name>reverseString</name>
+        <function-class>app06a.function.MyFunctions</function-class>
+        <function-signature>java.lang.String reverseString(java.lang.String)</function-signature>
+    </function>
+</taglib>
