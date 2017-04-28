@@ -1,0 +1,10 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: lambor
+  Date: 17-4-28
+  Time: 下午2:33
+  To change this template use File | Settings | File Templates.
+--%>
+<%
+    out.print("Hello from included.tagf");
+%>
