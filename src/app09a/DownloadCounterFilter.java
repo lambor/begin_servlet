@@ -20,6 +20,7 @@ import java.util.concurrent.Executors;
 @WebFilter(
         filterName = "DownloadCounterFilter",
         urlPatterns = {"/*"}
+        , asyncSupported = true
 )
 public class DownloadCounterFilter implements Filter {
 

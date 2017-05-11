@@ -15,6 +15,7 @@ import java.util.*;
 @WebFilter(
         filterName = "AutoCorrectFilter",
         urlPatterns = {"/*"}
+        , asyncSupported = true
 )
 public class AutoCorrectFilter implements Filter {
     @Override

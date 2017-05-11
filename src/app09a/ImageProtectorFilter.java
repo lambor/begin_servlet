@@ -8,7 +8,7 @@ import java.io.IOException;
 /**
  * Created by lambor on 17-5-9.
  */
-@WebFilter(filterName = "ImageProtectorFilter", urlPatterns = {"*.png","*.jpg","*.gif"})
+@WebFilter(filterName = "ImageProtectorFilter", urlPatterns = {"*.png","*.jpg","*.gif"}, asyncSupported = true)
 public class ImageProtectorFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
