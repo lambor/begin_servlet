@@ -39,4 +39,51 @@
     </servlet-mapping>
 
 
+    <!--Security Constraint-->
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>JSP pages</web-resource-name>
+            <url-pattern>/app12b/1.jsp</url-pattern>
+        </web-resource-collection>
+        <auth-constraint/>
+    </security-constraint>
+
+    <security-role>
+        <role-name>member</role-name>
+    </security-role>
+    <security-role>
+        <role-name>manager</role-name>
+    </security-role>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Servlet1</web-resource-name>
+            <url-pattern>/app12b/servlet1</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>member</role-name>
+            <role-name>manager</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <!--三种认证方式-->
+    <!---->
+    <!--<login-config>-->
+        <!--<auth-method>BASIC</auth-method>-->
+        <!--<realm-name>Members Only</realm-name>-->
+    <!--</login-config>-->
+
+    <!--<login-config>-->
+        <!--<auth-method>FORM</auth-method>-->
+        <!--<form-login-config>-->
+            <!--<form-login-page>/app12b/login.html</form-login-page>-->
+            <!--<form-error-page>/app12b/error.html</form-error-page>-->
+        <!--</form-login-config>-->
+    <!--</login-config>-->
+
+    <!--<login-config>-->
+        <!--<auth-method>DIGEST</auth-method>-->
+        <!--<realm-name>Digest authentication</realm-name>-->
+    <!--</login-config>-->
+
 </web-app>
