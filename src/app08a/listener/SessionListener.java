@@ -15,22 +15,23 @@ import java.util.concurrent.atomic.AtomicInteger;
  * Created by lambor on 17-5-9.
  */
 @WebListener
-public class SessionListener implements HttpSessionListener, ServletContextListener {
-    @Override
-    public void contextInitialized(ServletContextEvent servletContextEvent) {
-        ServletContext servletContext = servletContextEvent.getServletContext();
-        servletContext.setAttribute("userCounter",new AtomicInteger());
-
-        Map<String,String> countries = new HashMap<>();
-        countries.put("ca","Canada");
-        countries.put("us","United States");
-        servletContext.setAttribute("countries",countries);
-    }
-
-    @Override
-    public void contextDestroyed(ServletContextEvent servletContextEvent) {
-
-    }
+//public class SessionListener implements HttpSessionListener, ServletContextListener {
+public class SessionListener implements HttpSessionListener {
+//    @Override
+//    public void contextInitialized(ServletContextEvent servletContextEvent) {
+//        ServletContext servletContext = servletContextEvent.getServletContext();
+//        servletContext.setAttribute("userCounter",new AtomicInteger());
+//
+//        Map<String,String> countries = new HashMap<>();
+//        countries.put("ca","Canada");
+//        countries.put("us","United States");
+//        servletContext.setAttribute("countries",countries);
+//    }
+//
+//    @Override
+//    public void contextDestroyed(ServletContextEvent servletContextEvent) {
+//
+//    }
 
     @Override
     public void sessionCreated(HttpSessionEvent httpSessionEvent) {

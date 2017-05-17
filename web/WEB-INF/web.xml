@@ -66,6 +66,10 @@
         </auth-constraint>
     </security-constraint>
 
+    <listener>
+        <listener-class>app14a.DynRegListener</listener-class>
+    </listener>
+
     <!--三种认证方式-->
     <!---->
     <!--<login-config>-->
