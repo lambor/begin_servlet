@@ -6,7 +6,6 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <!--app18a-->
-    <context:component-scan base-package="controller"/>
     <mvc:annotation-driven/>
     <context:component-scan base-package="controller"/>
     <context:component-scan base-package="service"/>
@@ -43,5 +42,25 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+    <!--app20a-->
+    <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+        <property name="formatters">
+            <set>
+                <bean class="formatter.app20a.DateFormatter">
+                    <constructor-arg type="java.lang.String" value="yyyy-MM-dd"/>
+                </bean>
+            </set>
+        </property>
+    </bean>
+    <!--<bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">-->
+        <!--<property name="converters">-->
+            <!--<set>-->
+                <!--<bean class="converter.app20a.StringToDateConverter">-->
+                    <!--<constructor-arg type="java.lang.String" value="MM-dd-yyyy"/>-->
+                <!--</bean>-->
+            <!--</set>-->
+        <!--</property>-->
+    <!--</bean>-->
+    <mvc:annotation-driven conversion-service="conversionService"/>
 
 </beans>
