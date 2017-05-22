@@ -63,4 +63,9 @@
     <!--</bean>-->
     <mvc:annotation-driven conversion-service="conversionService"/>
 
+    <!--app21a-->
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basename" value="/WEB-INF/resource/messages"/>
+    </bean>
+
 </beans>

@@ -17,7 +17,10 @@ import service.app18a.ProductService;
  * 关于 controller 方法所接受的参数
  * http://www.jianshu.com/p/ed44e89a6f79
  */
-@Controller
+@Controller(
+        "app18a.ProductController"
+)
+@RequestMapping("/app18a/*")
 public class ProductController {
     private static final Log logger = LogFactory.getLog(ProductController.class);
 
@@ -25,13 +28,13 @@ public class ProductController {
      * ch18.3
      */
 
-    @RequestMapping("/app18a/product_input")
+    @RequestMapping("/product_input")
     public String inputProduct() {
         logger.info("inputProduct called");
         return "ProductForm18";
     }
 
-    @RequestMapping(value = "/app18a/product_save",method = RequestMethod.POST)
+    @RequestMapping(value = "/product_save",method = RequestMethod.POST)
     public String saveProduct(@ModelAttribute ProductForm productForm, Model model) {
         logger.info("saveProduct called");
 
@@ -53,13 +56,13 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
-    @RequestMapping("/app18a/product_input2")
+    @RequestMapping("/product_input2")
     public String inputProduct2() {
         logger.info("inputProduct called");
         return "ProductForm18_2";
     }
 
-    @RequestMapping(value = "/app18a/product_save2",method = RequestMethod.POST)
+    @RequestMapping(value = "/product_save2",method = RequestMethod.POST)
     public String saveProduct2(ProductForm productForm, RedirectAttributes redirectAttributes) {
         logger.info("saveProduct called");
 
@@ -73,7 +76,7 @@ public class ProductController {
         return "redirect:product_view/"+savedProduct.getId();
     }
 
-    @RequestMapping(value = "/app18a/product_view/{id}")
+    @RequestMapping(value = "/product_view/{id}")
     public String viewProduct(@PathVariable Long id,Model model) {
         Product product = productService.get(id);
         model.addAttribute("product",product);
@@ -95,7 +98,7 @@ public class ProductController {
         }
     }
 
-    @RequestMapping(value = "/app18a/test")
+    @RequestMapping(value = "/test")
     public void test(Test test) {
         logger.info(test.teststr);
     }
