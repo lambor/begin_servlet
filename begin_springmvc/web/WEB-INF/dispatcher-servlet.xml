@@ -65,7 +65,15 @@
 
     <!--app21a-->
     <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-        <property name="basename" value="/WEB-INF/resource/messages"/>
+        <property name="basenames">
+            <set>
+                <value>/WEB-INF/resource/messages</value>
+                <value>/WEB-INF/resource/labels</value>
+            </set>
+        </property>
     </bean>
 
+    <!--app22-->
+    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver">
+    </bean>
 </beans>
