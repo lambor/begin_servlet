@@ -13,7 +13,7 @@ import validator.ProductValidator;
 
 /**
  * Created by lambor on 17-5-20.
- *
+ * 国际化
  * ls | grep zh_CN | xargs -I {} native2ascii -encoding UTF-8 {} {}
  */
 @Controller(
