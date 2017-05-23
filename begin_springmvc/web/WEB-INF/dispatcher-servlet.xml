@@ -82,4 +82,7 @@
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <property name="maxUploadSize" value="2000000"/>
     </bean>
+
+    <!--app24-->
+    <mvc:resources mapping="*.html" location="/"/>
 </beans>
